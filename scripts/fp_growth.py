@@ -8,6 +8,6 @@ def get_book_recommendations(book_title, rules, df):
     
     recommendations.discard(book_title)
     
-    recommended_books = df[df['Book-Title'].isin(recommendations)].drop_duplicates('Book-Title')[['Book-Title', 'Image-URL-M']]
+    recommended_books = df[df['Book-Title'].isin(recommendations)].drop_duplicates('Book-Title')[['Book-Title', 'Image-URL-M', 'Book-Author']]
     return recommended_books if not recommended_books.empty else None
 

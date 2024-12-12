@@ -10,7 +10,7 @@ def load_and_prepare_data():
 
     filtered_ratings_df = ratings_df[ratings_df['Book-Rating'] > 5]
     
-    df = pd.merge(filtered_ratings_df, books_df[['ISBN', 'Book-Title', 'Image-URL-M']], on='ISBN', how='inner')
+    df = pd.merge(filtered_ratings_df, books_df[['ISBN', 'Book-Title', 'Image-URL-M', 'Book-Author']], on='ISBN', how='inner')
 
     df = df.drop_duplicates(['User-ID', 'Book-Title'])
 
