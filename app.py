@@ -12,9 +12,6 @@ st.set_page_config(page_title="Book Recommendation System", page_icon="📚", la
 st.markdown(
     """
     <style>
-    body {
-        background-color: white;
-    }
     .title {
         font-size: 5rem;
         font-weight: bold;
@@ -24,7 +21,6 @@ st.markdown(
         margin-bottom: 1rem;
     }
 
-    /* Large Screen Layout */
     .container {
         display: flex;
         justify-content: space-between;
@@ -32,30 +28,61 @@ st.markdown(
         flex-wrap: wrap;
     }
     
-    /* Left part (Image container) */
     .left {
-        width: 48%;
+        width: 49%;
     }
     
-    /* Right part (Dropdown + Button) */
     .right {
-        width: 48%;
+        width: 49%;
         display: flex;
         flex-direction: column;
     }
 
     div[data-baseweb="select"] {
-        font-size: 1.2rem;
-        border-color: #6A5ACD;
+        color: black;
+        border-radius: 0.25rem;
+        border: 2px solid black;
+        text-align: center;
+        background-color: #white;
+    }
+
+    .recommended-books-title {
+        text-decoration: underline;
     }
 
     div[data-testid="stButton"] > button {
-        background-color: #6A5ACD;
-        color: white;
-        padding: 0.5rem 1rem;
-        font-size: 1.2rem;
-        border-radius: 0.25rem;
-        margin-top: 1rem;
+        background-color: #F9F16F;
+        color: black;
+        padding: 0.8rem 4rem;
+        font-size: 1.4rem;
+        border-radius: 0.5rem;
+        border: 2px solid black;
+        cursor: pointer;
+        margin-left: 35%;
+        transition: all 0.3s ease; 
+    }
+    
+    div[data-testid="stButton"] > button:hover {
+        background-color: #F9F16F;
+        border-color: black;
+        color: black; 
+    }
+
+    .st-emotion-cache-1ogg8jh:focus:not(:active) {
+        color: black;
+    }
+
+    div[data-testid="stButton"] > button[disabled] {
+        background-color: white;  
+        cursor: not-allowed;
+        border-radius: 0.5rem;
+    }
+
+    div[data-testid="stButton"] > button:active {
+        background-color: #F9F16F;
+        border-color: black;
+        color: black;
+        transform: scale(0.98);
     }
 
     div[data-testid="stImage"] {
@@ -66,35 +93,40 @@ st.markdown(
 
     .recommended-books {
         display: flex;
-        flex-direction: column;
+        justify-content: flex-start;
         flex-wrap: wrap;
-        overflow-x: auto;
-        margin-top: 2rem;
+        flex-direction: row;
+        gap: 10px;
     }
 
-    .recommended-books div {
-        margin-right: 1rem;
+    .book-box {
+        padding: 2px;
+        border-radius: 8px;
+        width: 200px;
         text-align: center;
     }
 
     .recommended-books img {
-        width: 150px;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 8px;
         width: 100%;
-        max-width: 200px;
-        height: auto;
-        margin-bottom: 1rem;
+        border-radius: 8px;
     }
 
     .book-title {
         font-size: 1rem;
         font-weight: bold;
-        text-align: center;
+        text-align: left;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .book-author {
+        text-align: left;
+        font-size: 0.8rem;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        color: #747878;
     }
      
-    /* Responsive Design (Mobile view) */
     @media (max-width: 768px) {
         .title {
             font-size: 2rem;
@@ -109,86 +141,11 @@ st.markdown(
             width: 100%;
             margin-bottom: 1rem;
         }
-
-        /* Make the recommended books grid fit smaller screens */
-        .recommended-books {
-            grid-template-columns: repeat(2, 1fr);
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .recommended-books div {
-            margin-bottom: 1rem;
-        }
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-
-
-# st.markdown("""
-# <style>
-#     .main-header {
-#         font-size: 3rem;
-#         font-weight: bold;
-#         color: #1E3D59;
-#         text-align: center;
-#         margin-bottom: 2rem;
-#         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-#     }
-#     .sub-header {
-#         font-size: 1.8rem;
-#         color: #1E3D59;
-#         margin-bottom: 1rem;
-#         border-bottom: 2px solid #FF6E40;
-#         padding-bottom: 0.5rem;
-#     }
-#     .stat-box {
-#         background-color: #F5F0E1;
-#         border-radius: 10px;
-#         padding: 1.5rem;
-#         text-align: center;
-#         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-#         transition: transform 0.3s ease;
-#     }
-#     .stat-box:hover {
-#         transform: translateY(-5px);
-#     }
-#     .stat-number {
-#         font-size: 2.5rem;
-#         font-weight: bold;
-#         color: #FF6E40;
-#         margin-bottom: 0.5rem;
-#     }
-#     .stat-label {
-#         font-size: 1.2rem;
-#         color: #1E3D59;
-#         text-transform: uppercase;
-#     }
-#     .stButton>button {
-#         background-color: #FF6E40;
-#         color: white;
-#         font-weight: bold;
-#         padding: 0.5rem 1rem;
-#         border-radius: 5px;
-#         border: none;
-#         transition: background-color 0.3s ease;
-#     }
-#     .stButton>button:hover {
-#         background-color: #E85A3A;
-#     }
-#     .stSelectbox {
-#         color: #1E3D59;
-#     }
-#     .book-image {
-#         width: 100%;
-#         max-width: 200px;
-#         height: auto;
-#         margin-bottom: 1rem;
-#     }
-# </style>
-# """, unsafe_allow_html=True)
 
 @st.cache_data
 def load_data():
@@ -211,32 +168,44 @@ def main():
     col1, col2 = st.columns([2, 3])
 
     with col1:
-        image = Image.open("rapport/final-df.png")
+        image = Image.open("figures/recommendation_books_ssytem_image.png")
         st.image(image, use_column_width=True)
 
     with col2:
-        selected_book = st.selectbox("Select a book for recommendations:", books_in_rules)
+        selected_book = st.selectbox("", ["Pick a book you loved"] +  [book for book in books_in_rules], index=0)
 
         # Load data
         books_df = load_data()
     
-        # Book recommendation interface
+        if selected_book == "Pick a book you loved":
+            search_button_disabled = True
+        else:
+            search_button_disabled = False
     
-        if st.button("Get Recommendations"):
+        # Book recommendation interface
+        if st.button("Recommend", disabled=search_button_disabled):
+
+            # Get book recommendations
             recommendations = get_book_recommendations(selected_book, rules, books_df)
+            book_list = []
+
             if recommendations is not None:
-                st.markdown('<h2>Recommended Books: </h2>', unsafe_allow_html=True)
-                st.markdown('<div class="recommended-books">', unsafe_allow_html=True)
-                # cols = st.columns(5)
+                st.markdown('<div class="recommended-books-title">Books You\'ll Love: </div>', unsafe_allow_html=True)
                 for i, (_, row) in enumerate(recommendations.iterrows()):
-                    # if i % 5 == 0 and i != 0:
-                        # cols = st.columns(5)
-                    # with cols[i % 5]:
-                        # st.image(row['Image-URL-M'], use_column_width=True, caption=row['Book-Title'])
-                    st.markdown(f'<div><img src="{row["Image-URL-M"]}" alt="{row["Book-Title"]}" /><p class="book-title">{row["Book-Title"]}</p></div>', unsafe_allow_html=True)
+                    book_component = f'''
+                        <div class="book-box">
+                            <img src="{row["Image-URL-M"]}" alt="{row["Book-Title"]}" />
+                            <p class="book-title">
+                                {row["Book-Title"]}
+                            </p>
+                            <p class="book-author">
+                                {row["Book-Author"]}
+                            </p>
+                        </div>'''
+                    book_list.append(book_component)
+                st.markdown('<div class="recommended-books">' + ''.join(book_list) + '</div>', unsafe_allow_html=True)
             else:
                 st.warning("No recommendations found for this book.")
     
-# Run the Streamlit app
 if __name__ == "__main__":
     main()
