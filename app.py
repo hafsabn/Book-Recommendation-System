@@ -73,9 +73,14 @@ st.markdown(
     }
 
     div[data-testid="stButton"] > button[disabled] {
-        background-color: white;  
+        background-color: #d3d3d3;  
+        color: #747878;
         cursor: not-allowed;
         border-radius: 0.5rem;
+    }
+     
+    div[data-testid="stButton"] > button[disabled]:hover {
+        color: #747878;
     }
 
     div[data-testid="stButton"] > button:active {
