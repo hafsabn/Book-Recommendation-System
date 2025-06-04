@@ -100,4 +100,4 @@ Here are the potential future improvements and extensions to the project:
 
 2. **MLOps Integration**:
    - Develop the project as an MLOps pipeline.
-   - Automate data ingestion, model training, deployment, and monitoring
+   - Automate data ingestion, model training, deployment, and monitoring.
