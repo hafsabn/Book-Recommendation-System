@@ -1,7 +1,7 @@
 adal==1.2.7
 aiodns==3.0.0
 aiofiles==23.1.0
-aiohttp==3.12.14
+aiohttp==3.13.3
 aiomultiprocess==0.9.0
 aiosignal==1.3.1
 aiosqlite==0.17.0
@@ -69,7 +69,7 @@ azure-communication-rooms==1.0.0b3
 azure-communication-sms==1.1.0
 azure-confidentialledger==1.0.1
 azure-containerregistry==1.1.0b2
-azure-core==1.26.3
+azure-core==1.38.0
 azure-core-experimental==1.0.0b2
 azure-cosmos==3.1.1
 azure-data-tables==12.4.2
@@ -313,7 +313,7 @@ bidict==0.22.1
 binwalk==2.3.3
 blinker==1.5
 Bottleneck==1.3.5
-Brotli==1.0.9
+Brotli==1.2.0
 cairocffi==1.4.0
 capstone==4.0.2
 censys==2.1.9
@@ -327,7 +327,7 @@ click-plugins==1.1.1
 colorama==0.4.6
 configobj==5.0.9
 contourpy==1.0.7
-cryptography==44.0.1
+cryptography==46.0.5
 cupshelpers==1.0
 cycler==0.11.0
 dbus-python==1.3.2
@@ -354,10 +354,10 @@ executing==1.2.0
 fabric==2.6.0
 fastapi==0.92.0
 flasgger==0.9.5
-Flask==2.2.5
+Flask==3.1.3
 Flask-RESTful==0.3.9
 Flask-SocketIO==5.3.2
-fonttools==4.43.0
+fonttools==4.60.2
 frozenlist==1.3.3
 fs==2.4.16
 future==1.0.0
@@ -424,7 +424,7 @@ Mako==1.2.4.dev0
 Markdown==3.4.1
 markdown-it-py==3.0.0
 MarkupSafe==2.1.2
-marshmallow==3.18.0
+marshmallow==3.26.2
 mate-menu==22.4.1
 mate-tweak==22.10.0
 matplotlib==3.6.3
@@ -434,7 +434,7 @@ mdurl==0.1.2
 mechanize==0.4.8
 mergedeep==1.3.4
 mistune0==0.8.4
-mitmproxy==8.1.1
+mitmproxy==12.1.2
 mkdocs==1.4.2
 more-itertools==8.10.0
 mpmath==1.3.0
@@ -447,7 +447,7 @@ multidict==6.0.4
 mutagen==1.46.0
 netaddr==0.8.0
 netifaces==0.11.0
-nltk==3.9
+nltk==3.9.3
 notify2==0.3
 numba==0.56.4
 numexpr==2.8.5
@@ -470,7 +470,7 @@ pcapy==0.11.5.dev0
 pefile==2023.2.7
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==10.3.0
+Pillow==12.1.1
 pipx==1.1.0
 pkginfo==1.8.2
 pluggy==1.0.0+repack
@@ -479,7 +479,7 @@ ply==3.11
 portalocker==2.2.1
 prettytable==3.6.0
 prompt-toolkit==3.0.36
-protobuf==4.25.8
+protobuf==5.29.6
 psutil==5.9.4
 psycopg2==2.9.5
 ptyprocess==0.7.0
@@ -538,8 +538,8 @@ python-libnmap==0.7.3
 python-magic==0.4.26
 python-magic-ahupp==0.4.13
 python-memcached==1.58
-python-multipart==0.0.18
-python-socketio==5.7.2
+python-multipart==0.0.22
+python-socketio==5.14.0
 python-xlib==0.33
 pythran==0.11.0
 pytz==2022.7.1
@@ -568,7 +568,7 @@ rq==1.13.0
 rtlsdr-scanner==1.3.2
 ruamel.yaml==0.17.21
 ruamel.yaml.clib==0.2.7
-scapy==2.5.0
+scapy==2.7.0rc1
 scipy==1.10.1
 scp==0.14.4
 SecretStorage==3.3.3
@@ -587,7 +587,7 @@ specan==0.0.0
 SQLAlchemy==1.4.46
 sshtunnel==0.1.4
 stack-data==0.6.2
-starlette==0.47.2
+starlette==0.49.1
 stem==1.8.1
 strictyaml==1.6.1
 sympy==1.11.1
@@ -611,7 +611,7 @@ ufw==0.36.2
 ujson==5.7.0
 Unidecode==1.3.6
 uritemplate==4.1.1
-urllib3==2.5.0
+urllib3==2.6.3
 urwid==2.1.2
 userpath==1.8.0
 uvicorn==0.17.6
@@ -628,7 +628,7 @@ webencodings==0.5.1
 websocket-client==1.2.3
 websockets==10.4
 websploit==4.0.4
-Werkzeug==3.0.6
+Werkzeug==3.1.6
 wfuzz==3.1.0
 wifite==2.6.6
 wrapt==1.14.1
@@ -640,7 +640,7 @@ XlsxWriter==3.0.2
 xmltodict==0.13.0
 yara-python==4.5.1
 yarl==1.8.2
-yt-dlp==2024.7.7
+yt-dlp==2026.2.21
 zipp==3.19.1
 zope.event==4.4
 zope.interface==5.5.2
